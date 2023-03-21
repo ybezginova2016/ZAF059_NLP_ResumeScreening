@@ -19,6 +19,8 @@ drive.mount('/content/drive')
 
 pip install pdfminer3
 
+pip install pdfminer
+
 # importing library
 from pdfminer.high_level import extract_text
 
@@ -32,6 +34,10 @@ text = text.replace('\n', '')
 text = ' '.join(text.split())
 
 print(text)
+
+import re
+import string
+punctuations = string.punctuation
 
 # Convert all strings to lowercase
 text = text.lower()
@@ -68,11 +74,11 @@ X = vectorizer.transform([text])
 y_pred = model.predict(X)
 print("Predicted class:", y_pred[0])
 
-y_proba
-
 # Get probability estimates
 y_proba = model.predict_proba(X)
 print("Class :", y_pred[0], '\n' , "Class probability:",  y_proba[0][y_pred[0]])
+
+y_proba
 
 """# **Dictionary with key terms by area setup**
 
@@ -161,11 +167,14 @@ for area in terms.keys():
 
 """# **scores summary**"""
 
+import pandas as pd
 # Create a data frame with the scores summary
 summary = pd.DataFrame(scores,index=terms.keys(),columns=['score']).sort_values(by='score',ascending=False)
 summary
 
 """# **Visualizing skills score using pie char to a related fields**"""
+
+import matplotlib.pyplot as plt
 
 # Create pie chart visualization
 pie = plt.figure(figsize=(10,10))
