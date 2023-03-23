@@ -58,10 +58,10 @@ from nltk.stem import PorterStemmer
 from sklearn.feature_extraction.text import CountVectorizer
 
 # Load the pre-trained model and vectorizer
-with open("/content/drive/MyDrive/Resume_screening_paramesh/model.pkl", "rb") as f:
+with open("/content/drive/MyDrive/Resume_screening_paramesh/model_NB.pkl", "rb") as f:
     model = pickle.load(f)
 
-with open("/content/drive/MyDrive/Resume_screening_paramesh/vectorizer.pkl", "rb") as f:
+with open("/content/drive/MyDrive/Resume_screening_paramesh/vectorizer_NB.pkl", "rb") as f:
     vectorizer = pickle.load(f)
 
 # printing text file
